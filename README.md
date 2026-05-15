@@ -1,2 +1,2 @@
-# tcc_final-main
-projeto de conclusão de curso  
+# tcc_final
+projeto para o tcc

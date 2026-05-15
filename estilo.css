@@ -1,0 +1,515 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   HTML
+========================= */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #5692ca;
+
+    padding: 15px 40px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 90px;
+    margin-right: 15px;
+}
+
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.subtitulo {
+    font-size: 13px;
+    color: #e0e0e0;
+}
+
+/* =========================
+   MENU
+========================= */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav a {
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section {
+    scroll-margin-top: 120px;
+
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition: 0.8s ease;
+}
+
+section.ativo {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+/* =========================
+   COTAÇÃO
+========================= */
+#cotacao {
+    background: #f5f5f5;
+    padding: 80px 20px;
+}
+
+.conteudo-cotacao {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: row-reverse;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 50px;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+#cotacao form {
+    width: 50%;
+
+    background: #2085b1;
+
+    padding: 40px;
+
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    color: #fff;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+#cotacao label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+
+    font-weight: bold;
+}
+
+#cotacao input {
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+#cotacao input:focus {
+    border: 2px solid #145d7c;
+}
+
+/* BOTÃO */
+#cotacao button {
+    margin-top: 20px;
+
+    padding: 14px;
+
+    background: #5692ca;
+
+    color: #fff;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+#cotacao button:hover {
+    background: #3c6fa3;
+
+    transform: scale(1.03);
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   TEXTO COTAÇÃO
+========================= */
+.texto-cotacao {
+    width: 50%;
+}
+
+.texto-cotacao h2 {
+    font-size: 40px;
+
+    color: #2085b1;
+
+    margin-bottom: 20px;
+
+    line-height: 1.2;
+}
+
+.texto-cotacao p {
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 15px;
+
+    color: #444;
+}
+
+/* =========================
+   SEÇÕES PADRÃO
+========================= */
+.planos-saude,
+.planos-odontologicos,
+#seguros,
+#consorcios {
+    padding: 70px 20px;
+
+    text-align: center;
+}
+
+/* FUNDO */
+.planos-saude,
+.planos-odontologicos {
+    background: #b7d1e2;
+}
+
+#seguros,
+#consorcios {
+    background: #f5f5f5;
+}
+
+/* =========================
+   TÍTULOS
+========================= */
+.planos-saude h2,
+.planos-odontologicos h2,
+#seguros h2,
+#consorcios h2 {
+    font-size: 50px;
+
+    margin-bottom: 25px;
+
+    color: #2085b1;
+}
+
+.planos-odontologicos p,
+#seguros p {
+    margin-bottom: 40px;
+}
+
+/* =========================
+   GRID LOGOS
+========================= */
+.logos-saude,
+.logos-odontologicos,
+.seguros-logos,
+.consorcios-logos {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 40px;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    justify-items: center;
+    align-items: center;
+}
+
+/* =========================
+   IMAGENS
+========================= */
+.logos-saude img,
+.logos-odontologicos img,
+.seguros-logos img,
+.consorcios-logos img {
+
+    width: 100%;
+    max-width: 250px;
+
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    transition: 0.4s;
+
+    cursor: pointer;
+
+    filter: grayscale(100%);
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+    will-change: transform;
+}
+
+/* =========================
+   HOVER IMAGENS
+========================= */
+.logos-saude img:hover,
+.logos-odontologicos img:hover,
+.seguros-logos img:hover,
+.consorcios-logos img:hover {
+
+    filter: grayscale(0%);
+
+    transform: translateY(-8px) scale(1.05);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   BOTÃO COTAÇÃO
+========================= */
+.botao-cotacao {
+    max-width: 1200px;
+
+    margin: 50px auto 0;
+
+    text-align: left;
+}
+
+.botao-cotacao a {
+    background: #2085b1;
+
+    color: white;
+
+    padding: 18px 40px;
+
+    text-decoration: none;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    border-radius: 50px;
+
+    transition: 0.3s;
+
+    display: inline-block;
+}
+
+.botao-cotacao a:hover {
+    background: #145d7c;
+
+    transform: scale(1.05);
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   CONTATO
+========================= */
+.formulario {
+    padding: 70px 20px;
+
+    text-align: center;
+}
+
+.formulario h2 {
+    font-size: 45px;
+
+    margin-bottom: 30px;
+
+    color: #2085b1;
+}
+
+.formulario img {
+    width: 100%;
+    max-width: 700px;
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+.whatsapp {
+    position: fixed;
+
+    bottom: 20px;
+    right: 20px;
+
+    background: #25d366;
+
+    color: white;
+
+    padding: 15px 20px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+    transition: 0.3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.08);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+
+    .cabecalho {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 20px;
+    }
+
+    .logo {
+        flex-direction: column;
+    }
+
+    .logo img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .titulo {
+        font-size: 24px;
+    }
+
+    .subtitulo {
+        font-size: 12px;
+    }
+
+    .conteudo-cotacao {
+        flex-direction: column;
+    }
+
+    #cotacao form,
+    .texto-cotacao {
+        width: 100%;
+    }
+
+    #cotacao form {
+        padding: 25px;
+    }
+
+    .texto-cotacao h2 {
+        font-size: 30px;
+    }
+
+    .planos-saude h2,
+    .planos-odontologicos h2,
+    #seguros h2,
+    #consorcios h2,
+    .formulario h2 {
+        font-size: 35px;
+    }
+
+    .botao-cotacao {
+        text-align: center;
+    }
+
+    .whatsapp {
+        bottom: 15px;
+        right: 15px;
+
+        padding: 12px 16px;
+
+        font-size: 14px;
+    }
+}
