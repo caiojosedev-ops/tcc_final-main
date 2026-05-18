@@ -38,65 +38,42 @@ telefone.addEventListener("input", function () {
 
 
 /* =========================
-   ENVIO FORMULÁRIO
+   ENVIO WHATSAPP
 ========================= */
 
-formulario.addEventListener("submit", async function (event) {
+formulario.addEventListener("submit", function(event) {
 
     // impede reload
     event.preventDefault();
 
-    // botão submit
-    const botao = formulario.querySelector("button");
-
-    // desabilita botão
-    botao.disabled = true;
-
-    botao.innerText = "Enviando...";
-
     // pega dados
-    const dados = new FormData(formulario);
+    const nome = document.getElementById("nome").value;
 
-    try {
+    const telefoneValor = document.getElementById("telefone").value;
 
-        // envia para PHP
-        const resposta = await fetch("salvar.php", {
+    const email = document.getElementById("email").value;
 
-            method: "POST",
+    const cidade = document.getElementById("cidade").value;
 
-            body: dados
-        });
+    // mensagem
+    const mensagem =
+`Olá, gostaria de fazer uma cotação.
 
-        // recebe resposta
-        const resultado = await resposta.text();
+Nome: ${nome}
+Telefone: ${telefoneValor}
+Email: ${email}
+Cidade: ${cidade}`;
 
-        // remove espaços
-        const texto = resultado.trim();
+    // número whatsapp
+    const numero = "5581988326581";
 
-        if (texto === "sucesso") {
+    // cria url
+    const url =
+`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
 
-            alert("Cotação enviada com sucesso!");
+    // abre whatsapp
+    window.open(url, "_blank");
 
-            formulario.reset();
-
-        } else {
-
-            alert("Erro ao enviar formulário.");
-        }
-
-    } catch (erro) {
-
-        console.error(erro);
-
-        alert("Erro no servidor.");
-
-    } finally {
-
-        // ativa botão novamente
-        botao.disabled = false;
-
-        botao.innerText = "Enviar";
-    }
 });
 
 
@@ -108,16 +85,16 @@ linksMenu.forEach(function (link) {
 
     link.addEventListener("click", function (event) {
 
-        // impede comportamento padrão
+        // impede padrão
         event.preventDefault();
 
         // pega id
         const id = link.getAttribute("href");
 
-        // seleciona seção
+        // pega seção
         const secao = document.querySelector(id);
 
-        // verifica se existe
+        // verifica seção
         if (secao) {
 
             secao.scrollIntoView({
@@ -137,13 +114,13 @@ function mostrarSecoes() {
 
     secoes.forEach(function (secao) {
 
-        // posição da seção
+        // posição topo
         const topo = secao.getBoundingClientRect().top;
 
         // altura tela
         const alturaTela = window.innerHeight;
 
-        // ativa animação
+        // adiciona animação
         if (topo < alturaTela - 100) {
 
             secao.classList.add("ativo");
@@ -154,5 +131,5 @@ function mostrarSecoes() {
 // executa ao carregar
 mostrarSecoes();
 
-// executa no scroll
+// executa scroll
 window.addEventListener("scroll", mostrarSecoes);
