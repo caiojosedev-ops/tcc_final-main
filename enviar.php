@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Cabeçalhos
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/plain;charset=UTF-8" . "\r\n";
-    $headers .= "From: planosdesaudealcides.com" . "\r\n";
+    $headers .= "From: contato@planosdesaudealcides.com" . "\r\n";
     $headers .= "Reply-To: $email" . "\r\n";
 
     // Envio
