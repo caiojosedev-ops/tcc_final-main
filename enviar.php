@@ -1,32 +1,54 @@
 <?php
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $nome = $_POST['nome'];
-    $telefone = $_POST['telefone'];
-    $email = $_POST['email'];
-    $cidade = $_POST['cidade'];
+    // Captura os dados do formulário
+    $nome = htmlspecialchars($_POST['nome']);
+    $telefone = htmlspecialchars($_POST['telefone']);
+    $email = htmlspecialchars($_POST['email']);
+    $cidade = htmlspecialchars($_POST['cidade']);
 
-    // E-mail que vai receber as mensagens
+    // E-mail que receberá as mensagens
     $to = "alcides.admseguros@gmail.com";
 
-    // Assunto do e-mail
+    // Assunto
     $subject = "Nova mensagem do site";
 
-    // Corpo do e-mail
-    $body = "Nome: $nome\n";
-    $body .= "Telefone: $telefone\n";
-    $body .= "E-mail: $email\n";
-    $body .= "Cidade: $cidade\n";
+    // Corpo da mensagem
+    $body = "
+    Você recebeu uma nova solicitação de cotação.
+
+    Nome: $nome
+    Telefone: $telefone
+    E-mail: $email
+    Cidade: $cidade
+    ";
 
     // Cabeçalhos
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/plain;charset=UTF-8" . "\r\n";
+    $headers .= "From: site@seudominio.com" . "\r\n";
+    $headers .= "Reply-To: $email" . "\r\n";
 
-    // Enviar e-mail
+    // Envio
     if (mail($to, $subject, $body, $headers)) {
-        echo "E-mail enviado com sucesso!";
+
+        echo "
+        <script>
+            alert('Mensagem enviada com sucesso!');
+            window.location.href='index.html';
+        </script>
+        ";
+
     } else {
-        echo "Erro ao enviar e-mail.";
+
+        echo "
+        <script>
+            alert('Erro ao enviar mensagem.');
+            window.location.href='index.html';
+        </script>
+        ";
+
     }
 }
 ?>
