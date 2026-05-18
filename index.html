@@ -62,23 +62,21 @@
             <div class="conteudo-cotacao">
 
                 <!-- FORMULÁRIO -->
-                <form id="formCotacao">
+            
+                    <form id="formCotacao" action="enviar.php" method="POST">
 
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
+                         <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" required>
+                            <label for="telefone">Telefone:</label>
+                            <input type="text" id="telefone" name="telefone" required>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                            <label for="cidade">Cidade:</label>
+                            <input type="text" id="cidade" name="cidade" required>
 
-                    <label for="telefone">Telefone:</label>
-                    <input type="text" id="telefone" name="telefone" required>
+                            <button type="submit">Enviar</button>
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="cidade">Cidade:</label>
-                    <input type="text" id="cidade" name="cidade" required>
-
-                    <button type="submit">Enviar</button>
-
-                </form>
+                    </form>
 
                 <!-- TEXTO -->
                 <div class="texto-cotacao">
@@ -273,4 +271,4 @@
 
 </body>
 
-</html>>
+</html>
